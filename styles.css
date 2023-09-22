@@ -1,0 +1,542 @@
+/*===== FROM GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root{
+  --header-height: 54.4px;
+  --font-semi: 600;
+}
+
+/*===== Colors =====*/
+:root{
+  --first-color: #f440be;
+  --second-color: white;
+}
+
+/*===== Font Families =====*/
+:root{
+  --body-font: 'Poppins', sans-serif;
+  --big-font-size: 32px;
+  --h2-font-size: 20px;
+  --normal-font-size: 15px;
+}
+@media screen and (min-width: 768px){
+  :root{
+    --big-font-size: 56px;
+    --h2-font-size: 32px;
+    --normal-font-size: 16px;
+  }
+}
+
+/*===== Margins =====*/
+:root{
+  --mb-1: 8px;
+  --mb-2: 16px;
+  --mb-3: 24px;
+  --mb-4: 32px;
+  --mb-5: 40px;
+  --mb-6: 48px;
+}
+
+/*===== z index =====*/
+:root{
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: black;
+  background-color: blanchedalmond;
+}
+
+h1, h2, p{
+  margin: 0;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== CLASS CSS ===== */
+.section-title{
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+}
+
+.section-title::after{
+  position: absolute;
+  content: "";
+  width: 64px;
+  height: 2.88px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 32px;
+  background-color: var(--first-color);
+}
+
+.section{
+  padding-top: 48px;
+  padding-bottom: 32px;
+}
+
+/*===== LAYOUT =====*/
+.bd-grid{
+  max-width: 1024px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 100%;
+  grid-column-gap: 32px;
+  width: calc(100% - 32px);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+
+
+.l-header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: black;
+  box-shadow: 0 1px 4px magenta;
+}
+
+
+/*===== NAV =====*/
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+}
+
+
+@media screen and (max-width: 768px){
+  .nav__menu{
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--second-color);
+    transition: .5s;
+  }
+}
+
+
+.nav__item{
+  margin-bottom: var(--mb-4);
+}
+
+.nav__link{
+  position: relative;
+  color: #fff;
+}
+
+
+.nav__link:hover{
+  position: relative;
+}
+
+.nav__link:hover::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2.88px;
+  left: 0;
+  top: 32px;
+  background-color: var(--first-color);
+}
+
+.nav__logo{
+  color: blanchedalmond;
+}
+
+.nav__toggle{
+  color: var(--second-color);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/*Active menu*/
+.active::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2.88px;
+  left: 0;
+  top: 32px;
+  background-color: var(--first-color);
+}
+
+/*=== Work menu ===*/
+.work{
+  right: 0;
+}
+
+.music {
+  right: 0;
+}
+
+/*===== HOME Section =====*/
+.home{
+  height: calc(100vh - 3rem);
+  /* height: 20%; */
+  row-gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.home__data{
+  align-self: center;
+  height: 60%;
+}
+.home__title{
+  font-size: 50px;
+  margin-left: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: var(--mb-5);
+  color: black;
+}
+.home__title-color{
+  color: var(--first-color);
+}
+
+
+.home__img{
+  position: absolute;
+  left: 60%;
+  bottom: 45%;
+  width: 450px;
+  height: 100px;
+}
+
+
+.fa {
+  padding: 20px;
+  font-size:200px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 90%;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: black;
+  color: whitesmoke;
+}
+
+.fa-linkedin {
+  background: black;
+  color: white;
+}
+
+.fa-instagram {
+  background: black;
+  color: white;
+}
+
+.fa-twitter {
+  background: black;
+  color: white;
+}
+
+
+/* .fa-dev-to {
+  background: white;
+  color: black;
+} */
+
+/*BUTTONS*/
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: .75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: 8px;
+}
+
+.button:hover{
+  box-shadow: 0 10px 36px rgba(0,0,0,.15);
+}
+
+/* ===== ABOUT Me =====*/
+.about__container{
+  row-gap: 32px;
+  text-align: center;
+}
+.about__subtitle{
+  margin-bottom: var(--mb-2);
+}
+.about__img{
+  justify-self: center;
+}
+.about__img img{
+  width: 200px;
+  border-radius: 8px;
+}
+
+
+/* ===== Sample Work =====*/
+.work__container{
+  row-gap: 40px;
+}
+.work__img{
+  box-shadow: 0 4px 25px rgba(14,36,49,.15);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work__img img{
+  transition: 1s;
+  cursor: pointer;
+}
+
+.work__img img:hover{
+  transform: scale(1.1);
+}
+
+.text{
+  position: absolute;
+  bottom: 0px;
+  left: 50px;
+  color: white;
+  text-align: center;
+  
+}
+.text1{
+  position: absolute;
+  bottom: 0px;
+  left: 50px;
+  color: black;
+  text-align: center;
+  
+}
+
+
+
+/* ====== Music Section ====== */
+
+.music__container{
+  row-gap: 40px;
+}
+.music__img{
+  box-shadow: 0 4px 25px rgba(14,36,49,.15);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.music__img img{
+  transition: 1s;
+  cursor: pointer;
+}
+
+.music__img img:hover{
+  transform: scale(1.1);
+}
+
+.text{
+  position: absolute;
+  bottom: 0px;
+  left: 50px;
+  color: white;
+  text-align: center;
+  
+}
+.text1{
+  position: absolute;
+  bottom: 0px;
+  left: 50px;
+  color: black;
+  text-align: center;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== CONTACT =====*/
+.contact__input{
+  width: 100%;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1.5px solid var(--second-color);
+  outline: none;
+  margin-bottom: var(--mb-4);
+}
+.contact__button{
+  display: block;
+  border: none;
+  outline: none;
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* ===== FOOTER =====*/
+.footer{
+  background-color: black;
+  color: blanchedalmond;
+  text-align: center;
+  font-weight: var(--font-semi);
+  padding: 2rem 0;
+}
+.footer__title{
+  font-size: 32px;
+  margin-bottom: var(--mb-4);
+}
+
+
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 768px){
+  body{
+    margin: 0;
+  }
+  .section{
+    padding-top: 64px;
+    padding-bottom: 48px;
+  }
+  .section-title{
+    margin-bottom: var(--mb-6);
+  }
+  .section-title::after{
+    width: 80px;
+    top: 48px;
+  }
+
+  .nav{
+    height: calc(var(--header-height) + 1rem);
+  }
+  .nav__list{
+    display: flex;
+    padding-top: 0;
+  }
+  .nav__item{
+    margin-left: var(--mb-6);
+    margin-bottom: 0;
+  }
+  .nav__toggle{
+    display: none;
+  }
+  .nav__link{
+    color: var(--second-color);
+  }
+
+
+
+
+
+  .home{
+    height: 700px;
+    max-width: 1024px;
+    display: grid;
+    place-items: left;
+    grid-template-columns: 100%;
+    grid-column-gap: 96px;
+    width: calc(100% - 2rem);
+    margin-left: var(--mb-2);
+    margin-right: var(--mb-2);
+      
+  }
+
+
+.home_img{
+  height: 60px;
+  width: 40%;
+  margin-left: 60%;
+}
+
+
+  .home__data{
+    align-self: flex-end;
+    align-items: baseline;
+  }
+
+  .about__container{
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    text-align: initial;
+  }
+  .about__img img{
+    width: 300px;
+  }
+  .work__container{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+    column-gap: 8px;
+  }
+
+  .music__container{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+    column-gap: 8px;
+  }
+
+  .contact__form{
+    width: 360px;
+  }
+  .contact__container{
+    justify-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
